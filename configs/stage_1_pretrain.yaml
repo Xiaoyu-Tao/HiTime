@@ -1,0 +1,16 @@
+model:
+  # vit encoder
+  # encoder_model: "InceptionTime"
+  encoder_model: "ConvTimeNet"
+
+  # drop_path_rate: 0
+  # use_grad_checkpoint: False
+  ts_precision: "fp16"
+  freeze_ts: True
+
+  # Q-Former
+  num_query_token: 32
+
+  # Path to the weight of BERT-uncased
+  model_root: "/root/autodl-tmp/LM-Base-Model/Bert-Base-Uncased"
+  encoder_pretrained_folder: "/root/autodl-tmp/LLM4TS-main/datas/Encoder-Model"

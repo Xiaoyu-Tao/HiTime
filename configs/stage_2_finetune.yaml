@@ -1,0 +1,30 @@
+model:
+  Qformer:
+    # pretrained_pth: "/data/tingyue/tingyue/TS2LLM-new/data/pretrained_pth/Qformer_v0.pth"
+
+    # vit encoder
+    # encoder_model: "InceptionTime"
+    encoder_model: "ConvTimeNet"
+
+    # drop_path_rate: 0
+    # use_grad_checkpoint: False
+    ts_precision: "fp16"
+    freeze_ts: False
+
+    # Q-Former
+    num_query_token: 32
+
+    qformer_pretrained_folder: "/root/autodl-tmp/LLM4TS-main/datas/Pretrained_Qformer"
+    encoder_pretrained_folder: "/root/autodl-tmp/LLM4TS-main/datas/Encoder-Model"
+
+    # Path to the weight of BERT-uncased
+    model_root: "/root/autodl-tmp/LM-Base-Model/Bert-Base-Uncased"
+    
+    # ts_encoder
+    d_model: 192
+    e_layers: 3
+  
+  llm:
+    model_type: "llm"
+    # model_root: "/data/tingyue/tingyue/TS2LLM-new/data/LLM/GPT2"
+    model_root: "/root/autodl-tmp/LM-Base-Model/Meta-Llama-3-1-8B-Instruct"
